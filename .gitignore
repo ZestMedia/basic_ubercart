@@ -1,0 +1,6 @@
+# Ignore contrib modules
+modules/contrib
+modules/zest
+libraries
+themes
+css

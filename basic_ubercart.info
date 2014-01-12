@@ -1,0 +1,87 @@
+name = Basic Ubercart Profile
+core = 7.x
+
+; Core
+dependencies[] = block
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = statistics
+dependencies[] = taxonomy
+dependencies[] = tracker
+
+; Contrib - Don't need to list all modules here as some will be installed as dependencies.
+dependencies[] = admin_menu_toolbar
+dependencies[] = ckeditor
+dependencies[] = context_ui
+dependencies[] = colorbox
+dependencies[] = date
+dependencies[] = date_popup
+dependencies[] = date_views
+dependencies[] = email
+dependencies[] = entity
+dependencies[] = entityreference
+dependencies[] = faq
+dependencies[] = features
+dependencies[] = fe_block
+dependencies[] = features_override
+dependencies[] = field_group
+dependencies[] = galleryformatter
+dependencies[] = googleanalytics
+dependencies[] = libraries
+dependencies[] = logintoboggan
+; dependencies[] = modernizr
+dependencies[] = module_filter
+dependencies[] = pathauto
+dependencies[] = jquery_update
+dependencies[] = rules_admin
+dependencies[] = strongarm
+dependencies[] = uniform
+dependencies[] = views
+dependencies[] = webform
+dependencies[] = webform_features
+dependencies[] = xmlsitemap
+
+; Ubercart Core
+dependencies[] = uc_cart
+dependencies[] = uc_order
+dependencies[] = uc_product
+dependencies[] = uc_store
+
+dependencies[] = uc_payment
+dependencies[] = uc_attribute
+dependencies[] = uc_reports
+dependencies[] = uc_quote
+dependencies[] = uc_shipping
+
+; Ubercart Extra
+dependencies[] = uc_stock
+
+; Ubercart Fulfillment
+dependencies[] = uc_flatrate
+dependencies[] = uc_weightquote
+
+; Ubercart Payment
+
+; Development Pure
+dependencies[] = dblog
+dependencies[] = devel
+dependencies[] = devel_generate
+
+; Development Temporary
+dependencies[] = views_ui
+
+; Zest Modules
+dependencies[] = zest_reroute_email
+
+; Development CSS
+stylesheets[all][] = css/dev.css
