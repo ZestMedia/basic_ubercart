@@ -10,6 +10,48 @@
 function basic_ubercart_product_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-product-field_resources'
+  $field_instances['node-product-field_resources'] = array(
+    'bundle' => 'product',
+    'deleted' => 0,
+    'description' => 'Attach additional files about this product for users to download.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_resources',
+    'label' => 'Resources',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'txt pdf doc docx csv xls',
+      'max_filesize' => '15 MB',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 33,
+    ),
+  );
+
   // Exported field_instance: 'node-product-uc_product_image'
   $field_instances['node-product-uc_product_image'] = array(
     'bundle' => 'product',
@@ -75,7 +117,9 @@ function basic_ubercart_product_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Attach additional files about this product for users to download.');
   t('Image');
+  t('Resources');
 
   return $field_instances;
 }
