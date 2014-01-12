@@ -1,0 +1,14 @@
+name = Basic Ubercart Theme
+description = Various theme related settings.
+core = 7.x
+package = Basic Ubercart
+version = 7.x-1.0
+project = basic_ubercart_theme
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = admin_theme
+features[variable][] = node_admin_theme
+features[variable][] = theme_default
+project path = profiles/basic_ubercart/modules/basic_ubercart
