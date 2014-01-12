@@ -29,7 +29,7 @@ function basic_ubercart_product_field_default_field_instances() {
           'thumb_style' => 'galleryformatter_thumb',
         ),
         'type' => 'galleryformatter_default',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'hidden',

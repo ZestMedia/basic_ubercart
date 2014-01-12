@@ -101,4 +101,7 @@ function basic_ubercart_install() {
     ->condition('name', 'zest')
     ->execute();
 
+  // Revert all features to default state.
+  features_revert();
+
 }

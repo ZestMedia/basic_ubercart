@@ -14,5 +14,6 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_base][] = uc_product_image
 features[field_instance][] = node-product-uc_product_image
+features[variable][] = field_bundle_settings_node__product
 features[variable][] = uc_product_add_to_cart_qty
 project path = profiles/basic_ubercart/modules/basic_ubercart
