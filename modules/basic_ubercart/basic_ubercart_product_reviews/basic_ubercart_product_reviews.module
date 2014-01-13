@@ -53,3 +53,36 @@ function basic_ubercart_product_reviews_theme_registry_alter(&$theme_registry) {
     }
   }
 }
+
+/**
+ * Implements hook_node_view().
+ */
+function basic_ubercart_product_reviews_node_view($node, $view_mode, $langcode) {
+  if (isset($node->comment_limit) && $node->comment_limit) {
+    // Mimic the validation made by the comment module
+    if ($node->comment && $view_mode == 'full' && node_is_page($node) && empty($node->in_preview)) {
+      unset($node->content['comments']['comment_form']);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function basic_ubercart_product_reviews_preprocess_comment(&$variables) {
+
+  // Add the rating to each comment.
+  if ($variables['elements']['#bundle'] === 'comment_node_product') {
+
+    $uid = $variables['elements']['#comment']->uid;
+    $nid = $variables['elements']['#node']->nid;
+    $users_rating = votingapi_select_votes(array('entity_id' => $nid, 'entity_type' => 'node', 'uid' => $uid), 1);
+    if (!empty($users_rating)) {
+      $fivestar_variables = array('rating' => $users_rating[0]['value'], 'stars' => 5, 'tag' => 'Rating', 'widget' => array('name' => 'Basic'));
+      $theee = theme_fivestar_static($fivestar_variables);
+      $variables['author'] = $theee . ' ' . $variables['author'];
+    }
+
+  }
+
+}
