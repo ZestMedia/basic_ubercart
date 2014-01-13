@@ -1,0 +1,13 @@
+name = Basic Ubercart Product Reviews
+description = Changes the product comment system to be a review system.
+core = 7.x
+package = Basic Ubercart
+version = 7.x-1.0
+project = basic_ubercart_product_reviews
+dependencies[] = comment_limit
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = comment_limit_product
+project path = profiles/basic_ubercart/modules/basic_ubercart

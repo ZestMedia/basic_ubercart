@@ -1,0 +1,55 @@
+<?php
+/**
+ * @file
+ * Code for the Basic Ubercart Product Reviews feature.
+ */
+
+include_once 'basic_ubercart_product_reviews.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function basic_ubercart_product_reviews_form_comment_node_product_form_alter(&$form, &$form_state, $form_id) {
+
+  if($form['#bundle'] === 'comment_node_product') {
+
+    kpr($form);
+
+    $username = $form['author']['name']['#value'];
+
+    $form['comment_body']['und'][0]['#title'] = 'Add your review <small>(' . $username . ')</small>';
+
+    $form['actions']['submit']['#value'] = 'Submit Review';
+
+    // Remove the 'Your name' part.
+    unset($form['author']['_author']);
+
+  }
+
+}
+
+function basic_ubercart_product_reviews_theme_registry_alter(&$theme_registry) {
+  // Create a variable to store the path to this module
+  $basic_ubercart_product_reviews_path = drupal_get_path('module', 'basic_ubercart_product_reviews');
+
+  $theme_registry_copy = $theme_registry;
+  _theme_process_registry($theme_registry_copy, 'phptemplate', 'theme_engine', 'basic_ubercart_product_reviews', $basic_ubercart_product_reviews_path);
+  $theme_registry += array_diff_key($theme_registry_copy, $theme_registry);
+  // A list of templates the module will provide templates for
+  $hooks = array('comment-wrapper');
+  foreach ($hooks as $h) {
+    // Add the key 'theme paths' if it doesn't exist in this theme's registry
+    if (!isset($theme_registry[$h]['theme paths'])) {
+      $theme_registry[$h]['theme paths'] = array();
+    }
+    //Shift this module's directory to the top of the theme path list
+    if(is_array($theme_registry[$h]['theme paths'])) {
+      $first_element = array_shift($theme_registry[$h]['theme paths']);
+      if ($first_element) {
+        array_unshift($theme_registry[$h]['theme paths'], $first_element, $basic_ubercart_product_reviews_path);
+      } else {
+        array_unshift($theme_registry[$h]['theme paths'], $basic_ubercart_product_reviews_path);
+      }
+    }
+  }
+}
