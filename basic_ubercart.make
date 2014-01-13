@@ -29,6 +29,12 @@ api = 2
 ; Drupal 7.x. Requires the `core` property to be set to 7.x.
 projects[drupal][version] = 7
 
+; Patches
+; --------
+
+; Webform UUID: https://drupal.org/node/2076483
+projects[webform][patch][] = https://drupal.org/files/webform_uuid_0.patch
+
 ; Modules
 ; --------
 projects[admin_menu][version] = 3.0-rc4
@@ -129,6 +135,12 @@ projects[token][subdir] = "contrib"
 projects[ubercart][version] = 3.6
 projects[ubercart][type] = "module"
 projects[ubercart][subdir] = "contrib"
+projects[uuid][version] = 1.0-alpha5
+projects[uuid][type] = "module"
+projects[uuid][subdir] = "contrib"
+projects[uuid_features][version] = 1.0-alpha3
+projects[uuid_features][type] = "module"
+projects[uuid_features][subdir] = "contrib"
 projects[views][version] = 3.7
 projects[views][type] = "module"
 projects[views][subdir] = "contrib"
