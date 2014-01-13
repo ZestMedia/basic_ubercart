@@ -10,6 +10,53 @@
 function basic_ubercart_product_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-product-field_rating'
+  $field_instances['node-product-field_rating'] = array(
+    'bundle' => 'product',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please rate this product.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'fivestar',
+        'settings' => array(
+          'expose' => 1,
+          'style' => 'smart',
+          'text' => 'smart',
+          'widget' => array(
+            'fivestar_widget' => 'sites/all/modules/fivestar/widgets/basic/basic.css',
+          ),
+        ),
+        'type' => 'fivestar_formatter_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_rating',
+    'label' => 'Rating',
+    'required' => 0,
+    'settings' => array(
+      'allow_clear' => 1,
+      'stars' => 5,
+      'target' => 'none',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'fivestar',
+      'settings' => array(),
+      'type' => 'exposed',
+      'weight' => 34,
+    ),
+  );
+
   // Exported field_instance: 'node-product-field_resources'
   $field_instances['node-product-field_resources'] = array(
     'bundle' => 'product',
@@ -119,6 +166,8 @@ function basic_ubercart_product_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Attach additional files about this product for users to download.');
   t('Image');
+  t('Please rate this product.');
+  t('Rating');
   t('Resources');
 
   return $field_instances;

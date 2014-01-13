@@ -35,6 +35,7 @@ dependencies[] = features
 dependencies[] = fe_block
 dependencies[] = features_override
 dependencies[] = field_group
+dependencies[] = fivestar
 dependencies[] = galleryformatter
 dependencies[] = googleanalytics
 dependencies[] = libraries
