@@ -78,7 +78,7 @@ function basic_ubercart_product_reviews_preprocess_comment(&$variables) {
     $nid = $variables['elements']['#node']->nid;
     $users_rating = votingapi_select_votes(array('entity_id' => $nid, 'entity_type' => 'node', 'uid' => $uid), 1);
     if (!empty($users_rating)) {
-      $fivestar_variables = array('rating' => $users_rating[0]['value'], 'stars' => 5, 'tag' => 'Rating', 'widget' => array('name' => 'Basic'));
+      $fivestar_variables = array('rating' => $users_rating[0]['value'], 'stars' => 5, 'tag' => 'vote', 'widget' => array('name' => 'basic', 'css' => 'basic'));
       $theee = theme_fivestar_static($fivestar_variables);
       $variables['author'] = $theee . ' ' . $variables['author'];
     }
