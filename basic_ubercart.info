@@ -73,6 +73,11 @@ dependencies[] = uc_weightquote
 
 ; Ubercart Payment
 
+; Basic Ubercart
+dependencies[] = basic_ubercart_product
+dependencies[] = basic_ubercart_product_reviews
+dependencies[] = basic_ubercart_theme
+
 ; Development Pure
 dependencies[] = dblog
 dependencies[] = devel
