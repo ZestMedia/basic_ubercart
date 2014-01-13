@@ -22,8 +22,8 @@ function basic_ubercart_product_field_default_field_instances() {
         'module' => 'fivestar',
         'settings' => array(
           'expose' => 1,
-          'style' => 'smart',
-          'text' => 'smart',
+          'style' => 'dual',
+          'text' => 'dual',
           'widget' => array(
             'fivestar_widget' => 'sites/all/modules/fivestar/widgets/basic/basic.css',
           ),
