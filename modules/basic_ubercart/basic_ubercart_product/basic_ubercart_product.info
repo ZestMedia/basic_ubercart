@@ -20,6 +20,7 @@ features[field_base][] = uc_product_image
 features[field_instance][] = node-product-field_rating
 features[field_instance][] = node-product-field_resources
 features[field_instance][] = node-product-uc_product_image
+features[user_permission][] = rate content
 features[variable][] = comment_anonymous_product
 features[variable][] = comment_default_mode_product
 features[variable][] = comment_default_per_page_product
