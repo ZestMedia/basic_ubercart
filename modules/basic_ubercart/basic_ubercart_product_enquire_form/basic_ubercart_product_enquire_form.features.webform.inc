@@ -10,7 +10,7 @@
 function basic_ubercart_product_enquire_form_webform_defaults() {
 $webforms = array();
   $webforms['request_a_quote'] = array(
-  'uid' => 1,
+  'uid' => 0,
   'title' => 'Enquire about this product',
   'log' => '',
   'status' => 1,
@@ -26,7 +26,8 @@ $webforms = array();
   'revision_uid' => 1,
   'body' => array(),
   'webform' => array(
-    'confirmation' => '',
+    'confirmation' => '<p>Thanks for your enquiry, we\'ll get back to you as soon as possible.</p>
+',
     'confirmation_format' => 'filtered_html',
     'redirect_url' => '<none>',
     'status' => 1,
@@ -156,11 +157,11 @@ $webforms = array();
   ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 1,
+  'last_comment_uid' => 0,
   'comment_count' => 0,
-  'name' => 'admin',
+  'name' => '',
   'picture' => 0,
-  'data' => 'b:0;',
+  'data' => NULL,
 );
 return $webforms;
 }

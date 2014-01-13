@@ -17,16 +17,7 @@ function basic_ubercart_product_enquire_form_node_view($node, $view_mode, $langc
   // Only add price request link if add to cart button is present.
   if ($node->type === 'product' && $user->uid != '0') {
 
-    // Get the webform by UUID.
-    $query = new EntityFieldQuery();
-    $entities = $query->entityCondition('entity_type', 'node')
-      ->propertyCondition('uuid', '06155025-e656-4a2c-a45c-afdde3ee5264')
-      ->propertyCondition('status', 1)
-      ->range(0,1)
-      ->execute();
-    if (!empty($entities['node'])) {
-      $webform_node = node_load(array_shift(array_keys($entities['node'])));
-    }
+    $webform_node = basic_ubercart_product_enquire_form_get_form();
 
     $webform = drupal_get_form('webform_client_form_1', $webform_node, array());
 
