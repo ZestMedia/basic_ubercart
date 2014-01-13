@@ -41,7 +41,7 @@ $comment_form = render($content['comment_form']);
 <section class="comments <?php print $classes; ?>"<?php print $attributes; ?>>
   <?php print render($title_prefix); ?>
   <?php if ($comments && $node->type != 'forum'): ?>
-    <h2 class="title"><?php print t('Comments'); ?></h2>
+    <h2 class="title"><?php print t('Reviews'); ?></h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
