@@ -76,6 +76,8 @@ dependencies[] = uc_weightquote
 
 ; Basic Ubercart
 dependencies[] = basic_ubercart_product
+dependencies[] = basic_ubercart_product_enquire_form
+dependencies[] = basic_ubercart_main
 dependencies[] = basic_ubercart_product_reviews
 dependencies[] = basic_ubercart_theme
 

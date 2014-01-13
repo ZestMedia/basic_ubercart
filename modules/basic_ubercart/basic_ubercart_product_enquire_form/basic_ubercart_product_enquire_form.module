@@ -17,15 +17,20 @@ function basic_ubercart_product_enquire_form_node_view($node, $view_mode, $langc
   // Only add price request link if add to cart button is present.
   if ($node->type === 'product' && $user->uid != '0') {
 
-    // Get users email
-    global $user;
-    $user = user_load($user->uid);
+    // Get the webform by UUID.
+    $query = new EntityFieldQuery();
+    $entities = $query->entityCondition('entity_type', 'node')
+      ->propertyCondition('uuid', '06155025-e656-4a2c-a45c-afdde3ee5264')
+      ->propertyCondition('status', 1)
+      ->range(0,1)
+      ->execute();
+    if (!empty($entities['node'])) {
+      $webform_node = node_load(array_shift(array_keys($entities['node'])));
+    }
 
-    //$block = module_invoke('webform', 'block_view', 'client-block-32');
+    $webform = drupal_get_form('webform_client_form_1', $webform_node, array());
 
-    $webform_node = node_load('32');
-    $webform = drupal_get_form('webform_client_form_32', $webform_node, array());
-
+    // Put webform into node.
     $node->content['product_enquiry'] = array(
       //'#theme' => 'product_price_request_price_request',
       '#markup'=> drupal_render($webform),
