@@ -1,0 +1,63 @@
+<?php
+/**
+ * @file
+ * Code for the Basic Ubercart Product Enquire Form feature.
+ */
+
+include_once 'basic_ubercart_product_enquire_form.features.inc';
+
+/**
+ * Implements hook_node_view().
+ */
+
+function basic_ubercart_product_enquire_form_node_view($node, $view_mode, $langcode) {
+
+  global $user;
+
+  // Only add price request link if add to cart button is present.
+  if ($node->type === 'product' && $user->uid != '0') {
+
+    // Get users email
+    global $user;
+    $user = user_load($user->uid);
+
+    //$block = module_invoke('webform', 'block_view', 'client-block-32');
+
+    $webform_node = node_load('32');
+    $webform = drupal_get_form('webform_client_form_32', $webform_node, array());
+
+    $node->content['product_enquiry'] = array(
+      //'#theme' => 'product_price_request_price_request',
+      '#markup'=> drupal_render($webform),
+      '#view_mode' => $view_mode,
+      '#weight' => 20,
+      '#attributes' => array(
+        'class' => array('product-enquiry'),
+      ),
+    );
+
+  }
+
+}
+
+/**
+ * Implements hook_field_extra_fields().
+ *
+ * Adds the "Product Enquiry" block.
+ */
+
+function basic_ubercart_product_enquire_form_field_extra_fields() {
+  $extra = array();
+
+  $extra['node']['product'] = array(
+    'display' => array(
+      'product_enquiry' => array(
+        'label' => t('Product Enquiry'),
+        'description' => t('The Product Enquiry block.'),
+        'weight' => 20,
+      ),
+    ),
+  );
+
+  return $extra;
+}
