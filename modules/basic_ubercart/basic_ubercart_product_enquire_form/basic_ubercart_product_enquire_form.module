@@ -41,7 +41,6 @@ function basic_ubercart_product_enquire_form_node_view($node, $view_mode, $langc
  *
  * Adds the "Product Enquiry" block.
  */
-
 function basic_ubercart_product_enquire_form_field_extra_fields() {
   $extra = array();
 
@@ -56,4 +55,71 @@ function basic_ubercart_product_enquire_form_field_extra_fields() {
   );
 
   return $extra;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Alters the product enquire webform to add a custom submit function.
+ */
+
+function basic_ubercart_product_enquire_form_form_alter(&$form, &$form_state, $form_id) {
+
+  $webform = basic_ubercart_product_enquire_form_get_form();
+
+  if ($form_id === 'webform_client_form_' . $webform->nid) {
+
+    array_unshift($form['#submit'], 'basic_ubercart_product_enquire_form_attach_cart');
+
+  }
+
+}
+
+/**
+ * Returns the 'Product Enquire' webform node.
+ */
+function basic_ubercart_product_enquire_form_get_form() {
+
+    // Get the webform by UUID.
+    $query = new EntityFieldQuery();
+    $entities = $query->entityCondition('entity_type', 'node')
+      ->propertyCondition('uuid', '06155025-e656-4a2c-a45c-afdde3ee5264')
+      ->propertyCondition('status', 1)
+      ->range(0,1)
+      ->execute();
+    if (!empty($entities['node'])) {
+      $webform_node = node_load(array_shift(array_keys($entities['node'])));
+    }
+
+    return $webform_node;
+
+}
+
+/**
+ * Attaches the users cart to the webform submission.
+ */
+function basic_ubercart_product_enquire_form_attach_cart($form, &$form_state) {
+
+  global $user;
+  $user = user_load($user->uid);
+
+  $form_state['values']['submitted']['cart'] = $cart;
+
+}
+
+/**
+ * Returns an HTML list of orders for a certain user.
+ */
+function basic_ubercart_product_enquire_form_generate_cart_list() {
+
+  $cart = '';
+
+  $cart_products = uc_cart_get_contents();
+
+  foreach($cart_products as $cart_product) {
+    $product_url = 'http://' . $_SERVER['HTTP_HOST'] . '/' . drupal_get_path_alias('node/' . $cart_product->nid);
+    $cart .= '<a href="' . $product_url . '">' . $cart_product->title . '</a><br>';
+  }
+
+  return $cart;
 }
