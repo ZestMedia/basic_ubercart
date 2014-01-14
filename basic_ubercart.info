@@ -45,12 +45,14 @@ dependencies[] = logintoboggan
 dependencies[] = module_filter
 dependencies[] = pathauto
 dependencies[] = rules_admin
+dependencies[] = social_share
 dependencies[] = strongarm
 dependencies[] = uniform
 dependencies[] = uuid_features
 dependencies[] = views
 dependencies[] = webform
 dependencies[] = webform_features
+dependencies[] = webform_uuid
 dependencies[] = xmlsitemap
 
 ; Ubercart Core

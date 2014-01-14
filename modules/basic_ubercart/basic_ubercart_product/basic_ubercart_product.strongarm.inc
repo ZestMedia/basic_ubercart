@@ -203,6 +203,7 @@ function basic_ubercart_product_strongarm() {
     0 => 'facebook',
     1 => 'googleplus',
     2 => 'pinterest',
+    3 => 'twitter',
   );
   $export['social_share_networks_product'] = $strongarm;
 
