@@ -44,6 +44,7 @@ dependencies[] = logintoboggan
 ; dependencies[] = modernizr
 dependencies[] = module_filter
 dependencies[] = pathauto
+dependencies[] = print_mail
 dependencies[] = rules_admin
 dependencies[] = social_share
 dependencies[] = strongarm
