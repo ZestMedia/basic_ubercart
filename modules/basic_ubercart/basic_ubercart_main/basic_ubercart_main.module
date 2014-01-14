@@ -5,3 +5,21 @@
  */
 
 include_once 'basic_ubercart_main.features.inc';
+
+/**
+ * Implements hook_init().
+ *
+ * Removing a redundant error message which appears due to a feature which isn't broken.
+ */
+function basic_ubercart_main_preprocess_page() {
+  $messages = drupal_get_messages('error');
+
+  if((arg(0) === 'admin') && (arg(1) === 'structure') && (arg(2) === 'features')) {
+
+    foreach($messages['error'] as &$error_message) {
+      if($error_message === '<em class="placeholder">Notice</em>: Undefined property: stdClass::$nid in <em class="placeholder">DrupalDefaultEntityController-&gt;load()</em> (line <em class="placeholder">216</em> of <em class="placeholder">/srv/www/shelterstation/shelterstation.co.nz/includes/entity.inc</em>).' || $error_message === '<em class="placeholder">Notice</em>: Trying to get property of non-object in <em class="placeholder">basic_ubercart_product_enquire_form_form_alter()</em> (line <em class="placeholder">69</em> of <em class="placeholder">/srv/www/shelterstation/shelterstation.co.nz/profiles/basic_ubercart/modules/basic_ubercart/basic_ubercart_product_enquire_form/basic_ubercart_product_enquire_form.module</em>).') unset($error_message);
+    }
+
+  }
+
+}

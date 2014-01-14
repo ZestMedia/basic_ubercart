@@ -76,6 +76,9 @@ dependencies[] = uc_weightquote
 
 ; Ubercart Payment
 
+; Ubercart Contrib
+dependencies[] = uc_out_of_stock
+
 ; Basic Ubercart
 dependencies[] = basic_ubercart_product
 dependencies[] = basic_ubercart_product_enquire_form
