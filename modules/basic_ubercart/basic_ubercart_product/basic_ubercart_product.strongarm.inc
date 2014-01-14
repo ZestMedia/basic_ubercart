@@ -238,6 +238,37 @@ function basic_ubercart_product_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'uc_out_of_stock_disable_js';
+  $strongarm->value = 0;
+  $export['uc_out_of_stock_disable_js'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'uc_out_of_stock_instock';
+  $strongarm->value = 0;
+  $export['uc_out_of_stock_instock'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'uc_out_of_stock_text';
+  $strongarm->value = array(
+    'value' => '<p>Sorry, out of stock</p>',
+    'format' => 'filtered_html',
+  );
+  $export['uc_out_of_stock_text'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'uc_out_of_stock_throbber';
+  $strongarm->value = 0;
+  $export['uc_out_of_stock_throbber'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'uc_product_add_to_cart_qty';
   $strongarm->value = 1;
   $export['uc_product_add_to_cart_qty'] = $strongarm;
