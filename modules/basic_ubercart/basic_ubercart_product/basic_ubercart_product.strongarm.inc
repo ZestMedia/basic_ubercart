@@ -177,6 +177,66 @@ function basic_ubercart_product_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'social_share_description_product';
+  $strongarm->value = '[node:body]';
+  $export['social_share_description_product'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'social_share_enabled_product';
+  $strongarm->value = 1;
+  $export['social_share_enabled_product'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'social_share_image_product';
+  $strongarm->value = '';
+  $export['social_share_image_product'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'social_share_networks_product';
+  $strongarm->value = array(
+    0 => 'facebook',
+    1 => 'googleplus',
+    2 => 'pinterest',
+  );
+  $export['social_share_networks_product'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'social_share_show_label_product';
+  $strongarm->value = 0;
+  $export['social_share_show_label_product'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'social_share_theme_product';
+  $strongarm->value = 'social_share_small_icon';
+  $export['social_share_theme_product'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'social_share_title_product';
+  $strongarm->value = '[node:title]';
+  $export['social_share_title_product'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'social_share_url_product';
+  $strongarm->value = '[node:url:absolute]';
+  $export['social_share_url_product'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'uc_product_add_to_cart_qty';
   $strongarm->value = 1;
   $export['uc_product_add_to_cart_qty'] = $strongarm;

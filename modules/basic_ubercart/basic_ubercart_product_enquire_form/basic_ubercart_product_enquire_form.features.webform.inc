@@ -9,7 +9,7 @@
  */
 function basic_ubercart_product_enquire_form_webform_defaults() {
 $webforms = array();
-  $webforms['request_a_quote'] = array(
+  $webforms['product_enquiry'] = array(
   'uid' => 0,
   'title' => 'Enquire about this product',
   'log' => '',
@@ -41,7 +41,7 @@ $webforms = array();
     'submit_interval' => -1,
     'total_submit_limit' => -1,
     'total_submit_interval' => -1,
-    'machine_name' => 'request_a_quote',
+    'machine_name' => 'product_enquiry',
     'record_exists' => TRUE,
     'roles' => array(
       0 => 2,
@@ -49,7 +49,7 @@ $webforms = array();
     ),
     'emails' => array(),
     'components' => array(
-      'request_a_quote__email' => array(
+      'product_enquiry__email' => array(
         'form_key' => 'email',
         'name' => 'Email:',
         'type' => 'email',
@@ -68,10 +68,10 @@ $webforms = array();
         ),
         'mandatory' => 1,
         'weight' => 0,
-        'machine_name' => 'request_a_quote__email',
+        'machine_name' => 'product_enquiry__email',
         'page_num' => 1,
       ),
-      'request_a_quote__phone' => array(
+      'product_enquiry__phone' => array(
         'form_key' => 'phone',
         'name' => 'Phone:',
         'type' => 'textfield',
@@ -93,10 +93,10 @@ $webforms = array();
         ),
         'mandatory' => 0,
         'weight' => 1,
-        'machine_name' => 'request_a_quote__phone',
+        'machine_name' => 'product_enquiry__phone',
         'page_num' => 1,
       ),
-      'request_a_quote__enquiry' => array(
+      'product_enquiry__enquiry' => array(
         'form_key' => 'enquiry',
         'name' => 'Enquiry:',
         'type' => 'textarea',
@@ -116,10 +116,10 @@ $webforms = array();
         ),
         'mandatory' => 0,
         'weight' => 2,
-        'machine_name' => 'request_a_quote__enquiry',
+        'machine_name' => 'product_enquiry__enquiry',
         'page_num' => 1,
       ),
-      'request_a_quote__product_id' => array(
+      'product_enquiry__product_id' => array(
         'form_key' => 'product_id',
         'name' => 'Product ID:',
         'type' => 'hidden',
@@ -133,10 +133,10 @@ $webforms = array();
         ),
         'mandatory' => 0,
         'weight' => 3,
-        'machine_name' => 'request_a_quote__product_id',
+        'machine_name' => 'product_enquiry__product_id',
         'page_num' => 1,
       ),
-      'request_a_quote__product' => array(
+      'product_enquiry__product' => array(
         'form_key' => 'product',
         'name' => 'Product:',
         'type' => 'hidden',
@@ -150,7 +150,24 @@ $webforms = array();
         ),
         'mandatory' => 0,
         'weight' => 4,
-        'machine_name' => 'request_a_quote__product',
+        'machine_name' => 'product_enquiry__product',
+        'page_num' => 1,
+      ),
+      'product_enquiry__cart' => array(
+        'form_key' => 'cart',
+        'name' => 'Cart:',
+        'type' => 'hidden',
+        'value' => '',
+        'extra' => array(
+          'hidden_type' => 'value',
+          'conditional_operator' => '=',
+          'private' => 0,
+          'conditional_component' => '',
+          'conditional_values' => '',
+        ),
+        'mandatory' => 0,
+        'weight' => 5,
+        'machine_name' => 'product_enquiry__cart',
         'page_num' => 1,
       ),
     ),
