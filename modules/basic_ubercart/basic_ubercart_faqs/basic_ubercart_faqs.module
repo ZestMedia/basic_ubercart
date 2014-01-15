@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Basic Ubercart FAQs feature.
+ */
+
+include_once 'basic_ubercart_faqs.features.inc';
