@@ -104,7 +104,7 @@ function basic_ubercart_product_field_default_field_instances() {
         ),
       ),
       'type' => 'textfield_&_textarea',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
@@ -152,7 +152,7 @@ function basic_ubercart_product_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -194,7 +194,7 @@ function basic_ubercart_product_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 33,
+      'weight' => 2,
     ),
   );
 

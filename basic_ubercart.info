@@ -27,6 +27,7 @@ dependencies[] = colorbox
 dependencies[] = date
 dependencies[] = date_popup
 dependencies[] = date_views
+dependencies[] = double_field
 dependencies[] = email
 dependencies[] = entity
 dependencies[] = entityreference
@@ -56,8 +57,8 @@ dependencies[] = webform_features
 dependencies[] = webform_uuid
 dependencies[] = xmlsitemap
 
-; Ubercart Core
-dependencies[] = uc_cart
+; Ubercart dependencies
+Core[] = uc_cart
 dependencies[] = uc_order
 dependencies[] = uc_product
 dependencies[] = uc_store
