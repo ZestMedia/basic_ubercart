@@ -105,7 +105,7 @@ function basic_ubercart_product_reviews_field_default_field_instances() {
       'module' => 'fivestar',
       'settings' => array(),
       'type' => 'exposed',
-      'weight' => 34,
+      'weight' => 6,
     ),
   );
 

@@ -90,10 +90,10 @@ function basic_ubercart_product_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '1',
         ),
       ),
       'display' => array(
@@ -117,7 +117,7 @@ function basic_ubercart_product_strongarm() {
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '14',
+            'weight' => '15',
             'visible' => FALSE,
           ),
           'print' => array(
