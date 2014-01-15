@@ -10,6 +10,89 @@
 function basic_ubercart_product_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-product-field_product_specs'
+  $field_instances['node-product-field_product_specs'] = array(
+    'bundle' => 'product',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'double_field',
+        'settings' => array(
+          'first' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => ':&nbsp;',
+          ),
+          'second' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => '',
+          ),
+          'style' => 'inline',
+        ),
+        'type' => 'double_field_unformatted_list',
+        'weight' => 6,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_product_specs',
+    'label' => 'Specifications',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'double_field',
+      'settings' => array(
+        'first' => array(
+          'general' => array(
+            'prefix' => '',
+            'required' => 1,
+            'suffix' => '',
+          ),
+          'textfield' => array(
+            'placeholder' => 'Spec name',
+            'size' => 10,
+          ),
+        ),
+        'inline' => 0,
+        'second' => array(
+          'general' => array(
+            'prefix' => '',
+            'required' => 1,
+            'suffix' => '',
+          ),
+          'textarea' => array(
+            'cols' => 10,
+            'placeholder' => 'Spec data',
+            'resizable' => 1,
+            'rows' => 5,
+          ),
+        ),
+      ),
+      'type' => 'textfield_&_textarea',
+      'weight' => 35,
+    ),
+  );
+
   // Exported field_instance: 'node-product-field_rating'
   $field_instances['node-product-field_rating'] = array(
     'bundle' => 'product',
@@ -192,6 +275,7 @@ function basic_ubercart_product_field_default_field_instances() {
   t('Please rate this product.');
   t('Rating');
   t('Resources');
+  t('Specifications');
 
   return $field_instances;
 }

@@ -10,6 +10,37 @@
 function basic_ubercart_product_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_product_specs'
+  $field_bases['field_product_specs'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_product_specs',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'double_field',
+    'settings' => array(
+      'first' => array(
+        'maxlength' => 255,
+        'precision' => 10,
+        'scale' => 2,
+        'size' => 'normal',
+        'type' => 'varchar',
+      ),
+      'second' => array(
+        'maxlength' => 255,
+        'precision' => 10,
+        'scale' => 2,
+        'size' => 'normal',
+        'type' => 'text',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'double_field',
+  );
+
   // Exported field_base: 'field_rating'
   $field_bases['field_rating'] = array(
     'active' => 1,
