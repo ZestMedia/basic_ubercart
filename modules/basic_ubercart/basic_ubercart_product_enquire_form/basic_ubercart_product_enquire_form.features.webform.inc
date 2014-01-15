@@ -23,7 +23,7 @@ $webforms = array();
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '06155025-e656-4a2c-a45c-afdde3ee5264',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(),
   'webform' => array(
     'confirmation' => '<p>Thanks for your enquiry, we\'ll get back to you as soon as possible.</p>
@@ -176,9 +176,15 @@ $webforms = array();
   'last_comment_name' => NULL,
   'last_comment_uid' => 0,
   'comment_count' => 0,
+  'print_display' => 1,
+  'print_display_comment' => 0,
+  'print_display_urllist' => 1,
   'name' => '',
   'picture' => 0,
   'data' => NULL,
+  'print_mail_display' => 1,
+  'print_mail_display_comment' => 0,
+  'print_mail_display_urllist' => 1,
 );
 return $webforms;
 }
