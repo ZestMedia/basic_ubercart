@@ -165,10 +165,9 @@ function basic_ubercart_product_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 13,
       ),
       'print' => array(
         'label' => 'above',

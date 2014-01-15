@@ -103,7 +103,7 @@ function basic_ubercart_product_strongarm() {
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '0',
+            'weight' => '1',
             'visible' => TRUE,
           ),
           'print' => array(
@@ -169,7 +169,7 @@ function basic_ubercart_product_strongarm() {
         ),
         'display_price' => array(
           'default' => array(
-            'weight' => '13',
+            'weight' => '14',
             'visible' => FALSE,
           ),
           'print' => array(
@@ -179,7 +179,7 @@ function basic_ubercart_product_strongarm() {
         ),
         'sell_price' => array(
           'default' => array(
-            'weight' => '1',
+            'weight' => '2',
             'visible' => TRUE,
           ),
           'print' => array(
