@@ -31,6 +31,13 @@ function basic_ubercart_product_field_default_field_instances() {
         'type' => 'fivestar_formatter_default',
         'weight' => 5,
       ),
+      'print' => array(
+        'label' => 'inline',
+        'module' => 'fivestar',
+        'settings' => array(),
+        'type' => 'fivestar_formatter_rating',
+        'weight' => 3,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -69,6 +76,12 @@ function basic_ubercart_product_field_default_field_instances() {
         'settings' => array(),
         'type' => 'file_default',
         'weight' => 4,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -126,6 +139,16 @@ function basic_ubercart_product_field_default_field_instances() {
         'settings' => array(),
         'type' => 'uc_product_image',
         'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'galleryformatter_slide',
+        ),
+        'type' => 'image',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'hidden',

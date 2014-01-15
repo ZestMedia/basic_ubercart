@@ -83,6 +83,9 @@ function basic_ubercart_product_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'print' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -103,6 +106,10 @@ function basic_ubercart_product_strongarm() {
             'weight' => '0',
             'visible' => TRUE,
           ),
+          'print' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
         ),
         'list_price' => array(
           'teaser' => array(
@@ -111,6 +118,10 @@ function basic_ubercart_product_strongarm() {
           ),
           'default' => array(
             'weight' => '9',
+            'visible' => FALSE,
+          ),
+          'print' => array(
+            'weight' => '13',
             'visible' => FALSE,
           ),
         ),
@@ -123,6 +134,10 @@ function basic_ubercart_product_strongarm() {
             'weight' => '8',
             'visible' => FALSE,
           ),
+          'print' => array(
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
         ),
         'weight' => array(
           'teaser' => array(
@@ -131,6 +146,10 @@ function basic_ubercart_product_strongarm() {
           ),
           'default' => array(
             'weight' => '5',
+            'visible' => TRUE,
+          ),
+          'print' => array(
+            'weight' => '4',
             'visible' => TRUE,
           ),
         ),
@@ -143,11 +162,19 @@ function basic_ubercart_product_strongarm() {
             'weight' => '6',
             'visible' => TRUE,
           ),
+          'print' => array(
+            'weight' => '5',
+            'visible' => TRUE,
+          ),
         ),
         'display_price' => array(
           'default' => array(
             'weight' => '1',
             'visible' => TRUE,
+          ),
+          'print' => array(
+            'weight' => '8',
+            'visible' => FALSE,
           ),
         ),
         'sell_price' => array(
@@ -155,11 +182,39 @@ function basic_ubercart_product_strongarm() {
             'weight' => '4',
             'visible' => TRUE,
           ),
+          'print' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
         ),
         'add_to_cart' => array(
           'default' => array(
             'weight' => '7',
             'visible' => TRUE,
+          ),
+          'print' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+        ),
+        'product_enquiry' => array(
+          'default' => array(
+            'weight' => '20',
+            'visible' => TRUE,
+          ),
+          'print' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+        ),
+        'social_share' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'print' => array(
+            'weight' => '9',
+            'visible' => FALSE,
           ),
         ),
       ),
