@@ -30,7 +30,6 @@ dependencies[] = date_views
 dependencies[] = email
 dependencies[] = entity
 dependencies[] = entityreference
-dependencies[] = faq
 dependencies[] = features
 dependencies[] = fe_block
 dependencies[] = features_override
