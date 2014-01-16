@@ -49,6 +49,7 @@ dependencies[] = rules_admin
 dependencies[] = social_share
 dependencies[] = strongarm
 dependencies[] = taxonomy_menu
+dependencies[] = tvi
 dependencies[] = uniform
 dependencies[] = uuid_features
 dependencies[] = views

@@ -115,5 +115,19 @@ function basic_ubercart_categories_strongarm() {
   $strongarm->value = FALSE;
   $export['taxonomy_menu_voc_name_categories'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'tvi_vocab_categories';
+  $strongarm->value = array(
+    'is_default' => TRUE,
+    'type' => 'vocab',
+    'xid' => 'categories',
+    'status' => 1,
+    'view_name' => 'products_by_category',
+    'display' => 'products_by_category',
+  );
+  $export['tvi_vocab_categories'] = $strongarm;
+
   return $export;
 }

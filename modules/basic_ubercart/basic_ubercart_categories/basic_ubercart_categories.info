@@ -35,6 +35,7 @@ features[variable][] = taxonomy_menu_voc_item_description_categories
 features[variable][] = taxonomy_menu_voc_name_categories
 features[variable][] = taxonomy_menu_vocab_menu_categories
 features[variable][] = taxonomy_menu_vocab_parent_categories
+features[variable][] = tvi_vocab_categories
 features[views_view][] = product_categories
 features[views_view][] = products_by_category
 features_exclude[dependencies][ctools] = ctools
