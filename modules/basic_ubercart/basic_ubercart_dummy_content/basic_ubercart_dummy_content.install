@@ -32,7 +32,7 @@ function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
   $module_path = drupal_get_path('module', 'basic_ubercart_dummy_content');
 
   // Get catalog vid
-  $vid = taxonomy_vocabulary_machine_name_load('catalog');
+  $vid = taxonomy_vocabulary_machine_name_load('categories');
   $vid = $vid->vid;
 
   $term = new stdClass();
