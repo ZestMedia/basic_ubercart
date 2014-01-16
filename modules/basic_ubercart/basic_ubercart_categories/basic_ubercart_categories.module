@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Basic Ubercart Categories feature.
  */
+
+include_once 'basic_ubercart_categories.features.inc';
