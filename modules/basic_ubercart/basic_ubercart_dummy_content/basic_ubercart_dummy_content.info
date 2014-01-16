@@ -1,0 +1,7 @@
+name = Basic Ubercart Dummy Content
+description = Provides dummy content for basic ubercart profile to aid in theming.
+core = 7.x
+package = Basic Ubercart
+version = 7.x-1.0
+project = basic_ubercart_dummy_content
+dependencies[] = uc_catalog

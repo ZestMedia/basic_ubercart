@@ -1,0 +1,168 @@
+<?php
+/**
+ * @file
+ * Code for the Basic Ubercart Dummy Content.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function basic_ubercart_dummy_content_install() {
+
+  // Create taxonomy terms.
+  basic_ubercart_dummy_content_create_taxonomy_terms_catalog();
+
+}
+
+/**
+ * Creates some basic dummy taxonomy terms for the catalog vocabulary.
+ */
+function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
+
+  // Get catalog vid
+  $vid = taxonomy_vocabulary_machine_name_load('catalog');
+  $vid = $vid->vid;
+
+  $term = new stdClass();
+  $filepath = drupal_realpath('images/alexien.png');
+  $file = (object) array(
+      'uid' => 1,
+      'uri' => $filepath,
+      'filemime' => file_get_mimetype($filepath),
+      'status' => 1,
+    );
+  $file = file_copy($file, 'public://');
+  $term->name = 'Category A';
+  $term->vid = $vid;
+  $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfe2c';
+  $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+  taxonomy_term_save($term);
+  $term_recent = clone $term;
+
+    $term = new stdClass();
+    $filepath = drupal_realpath('images/download.jpg');
+    $file = (object) array(
+        'uid' => 1,
+        'uri' => $filepath,
+        'filemime' => file_get_mimetype($filepath),
+        'status' => 1,
+      );
+    $file = file_copy($file, 'public://');
+    $term->name = 'Category A1';
+    $term->vid = $vid;
+    $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfecc';
+    $term->parent = $term_recent->tid;
+    $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+    taxonomy_term_save($term);
+
+    $term = new stdClass();
+    $filepath = drupal_realpath('images/davealex.png');
+    $file = (object) array(
+        'uid' => 1,
+        'uri' => $filepath,
+        'filemime' => file_get_mimetype($filepath),
+        'status' => 1,
+      );
+    $file = file_copy($file, 'public://');
+    $term->name = 'Category A2';
+    $term->vid = $vid;
+    $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfez1';
+    $term->parent = $term_recent->tid;
+    $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+    taxonomy_term_save($term);
+    $term_recent = clone $term;
+
+      $term = new stdClass();
+      $filepath = drupal_realpath('images/Picnic.png');
+      $file = (object) array(
+          'uid' => 1,
+          'uri' => $filepath,
+          'filemime' => file_get_mimetype($filepath),
+          'status' => 1,
+        );
+      $file = file_copy($file, 'public://');
+      $term->name = 'Category A2';
+      $term->vid = $vid;
+      $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfez8';
+      $term->parent = $term_recent->tid;
+      $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+      taxonomy_term_save($term);
+
+  $term = new stdClass();
+  $filepath = drupal_realpath('images/images.jpg');
+  $file = (object) array(
+      'uid' => 1,
+      'uri' => $filepath,
+      'filemime' => file_get_mimetype($filepath),
+      'status' => 1,
+    );
+  $file = file_copy($file, 'public://');
+  $term->name = 'Category B';
+  $term->vid = $vid;
+  $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfe3a';
+  $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+  taxonomy_term_save($term);
+  $term_recent = clone $term;
+
+    $term = new stdClass();
+    $filepath = drupal_realpath('images/download.jpg');
+    $file = (object) array(
+        'uid' => 1,
+        'uri' => $filepath,
+        'filemime' => file_get_mimetype($filepath),
+        'status' => 1,
+      );
+    $file = file_copy($file, 'public://');
+    $term->name = 'Category B1';
+    $term->vid = $vid;
+    $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfea6';
+    $term->parent = $term_recent->tid;
+    $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+    taxonomy_term_save($term);
+/*
+  $term = new stdClass();
+  $filepath = drupal_realpath('images/alexien.png');
+  $file = (object) array(
+      'uid' => 1,
+      'uri' => $filepath,
+      'filemime' => file_get_mimetype($filepath),
+      'status' => 1,
+    );
+  $file = file_copy($file, 'public://');
+  $term->name = 'Category B';
+  $term->vid = $vid;
+  $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfe7g';
+  $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+  taxonomy_term_save($term);
+
+  $term = new stdClass();
+  $filepath = drupal_realpath('images/alexien.png');
+  $file = (object) array(
+      'uid' => 1,
+      'uri' => $filepath,
+      'filemime' => file_get_mimetype($filepath),
+      'status' => 1,
+    );
+  $file = file_copy($file, 'public://');
+  $term->name = 'Category B';
+  $term->vid = $vid;
+  $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfedf';
+  $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+  taxonomy_term_save($term);
+
+  $term = new stdClass();
+  $filepath = drupal_realpath('images/alexien.png');
+  $file = (object) array(
+      'uid' => 1,
+      'uri' => $filepath,
+      'filemime' => file_get_mimetype($filepath),
+      'status' => 1,
+    );
+  $file = file_copy($file, 'public://');
+  $term->name = 'Category B';
+  $term->vid = $vid;
+  $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfezk';
+  $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+  taxonomy_term_save($term);
+*/
+}
