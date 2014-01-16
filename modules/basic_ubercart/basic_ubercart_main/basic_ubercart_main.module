@@ -30,8 +30,8 @@ function basic_ubercart_main_preprocess_page() {
  */
 function basic_ubercart_main_views_default_views_alter(&$views) {
 
-  if (isset($views['uc_catalog'])) {
-    $views['uc_catalog']->display['default']->display_options['arguments']['term_node_tid_depth']['depth'] = '5';
+  if (isset($views['taxonomy_term'])) {
+    $views['taxonomy_term']->disabled = FALSE;
   }
 
 }

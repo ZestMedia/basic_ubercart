@@ -12,7 +12,7 @@ function basic_ubercart_categories_views_default_views() {
 
   $view = new view();
   $view->name = 'product_categories';
-  $view->description = 'Catalog categories';
+  $view->description = 'Product Categories';
   $view->tag = '';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'Product Categories';
@@ -22,7 +22,8 @@ function basic_ubercart_categories_views_default_views() {
 
   /* Display: Defaults */
   $handler = $view->new_display('default', 'Defaults', 'default');
-  $handler->display->display_options['css_class'] = 'uc-catalog-terms';
+  $handler->display->display_options['title'] = 'Product Categories';
+  $handler->display->display_options['css_class'] = 'product_category_terms';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -43,28 +44,11 @@ function basic_ubercart_categories_views_default_views() {
   $handler->display->display_options['fields']['tid']['label'] = '';
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Field: Taxonomy term: Image */
-  $handler->display->display_options['fields']['entity_id']['id'] = 'entity_id';
-  $handler->display->display_options['fields']['entity_id']['table'] = 'field_data_uc_catalog_image';
-  $handler->display->display_options['fields']['entity_id']['field'] = 'uc_catalog_image';
-  $handler->display->display_options['fields']['entity_id']['label'] = '';
-  $handler->display->display_options['fields']['entity_id']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['entity_id']['alter']['path'] = 'catalog/[tid]';
-  $handler->display->display_options['fields']['entity_id']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['entity_id']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['entity_id']['settings'] = array(
-    'image_style' => 'uc_category',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['entity_id']['delta_limit'] = '1';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'catalog/[name]';
-  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
   $handler->display->display_options['fields']['name']['convert_spaces'] = TRUE;

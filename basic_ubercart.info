@@ -70,7 +70,6 @@ dependencies[] = uc_quote
 dependencies[] = uc_shipping
 
 ; Ubercart Extra
-;dependencies[] = uc_catalog
 dependencies[] = uc_stock
 
 ; Ubercart Fulfillment

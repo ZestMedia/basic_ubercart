@@ -10,7 +10,7 @@
 function basic_ubercart_dummy_content_install() {
 
   // Create taxonomy terms.
-  basic_ubercart_dummy_content_create_taxonomy_terms_catalog();
+  basic_ubercart_dummy_content_create_taxonomy_terms_categories();
 
 }
 
@@ -20,18 +20,18 @@ function basic_ubercart_dummy_content_install() {
 function basic_ubercart_dummy_content_uninstall() {
 
   // Delete taxonomy terms.
-  basic_ubercart_dummy_content_delete_taxonomy_terms_catalog();
+  basic_ubercart_dummy_content_delete_taxonomy_terms_categories();
 
 }
 
 /**
- * Creates some basic dummy taxonomy terms for the catalog vocabulary.
+ * Creates some basic dummy taxonomy terms for the categories vocabulary.
  */
-function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
+function basic_ubercart_dummy_content_create_taxonomy_terms_categories() {
 
   $module_path = drupal_get_path('module', 'basic_ubercart_dummy_content');
 
-  // Get catalog vid
+  // Get categories vid
   $vid = taxonomy_vocabulary_machine_name_load('categories');
   $vid = $vid->vid;
 
@@ -47,7 +47,7 @@ function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
   $term->name = 'Category A';
   $term->vid = $vid;
   $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfe2c';
-  $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+  $term->field_category_image = array('und' => array('0' => (array) $file));
   taxonomy_term_save($term);
   $term_recent = clone $term;
 
@@ -64,7 +64,7 @@ function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
     $term->vid = $vid;
     $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfecc';
     $term->parent = $term_recent->tid;
-    $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+    $term->field_category_image = array('und' => array('0' => (array) $file));
     taxonomy_term_save($term);
 
     $term = new stdClass();
@@ -80,7 +80,7 @@ function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
     $term->vid = $vid;
     $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfez1';
     $term->parent = $term_recent->tid;
-    $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+    $term->field_category_image = array('und' => array('0' => (array) $file));
     taxonomy_term_save($term);
     $term_recent = clone $term;
 
@@ -97,7 +97,7 @@ function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
       $term->vid = $vid;
       $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfez8';
       $term->parent = $term_recent->tid;
-      $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+      $term->field_category_image = array('und' => array('0' => (array) $file));
       taxonomy_term_save($term);
 
   $term = new stdClass();
@@ -112,7 +112,7 @@ function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
   $term->name = 'Category B';
   $term->vid = $vid;
   $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfe3a';
-  $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+  $term->field_category_image = array('und' => array('0' => (array) $file));
   taxonomy_term_save($term);
   $term_recent = clone $term;
 
@@ -129,60 +129,15 @@ function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
     $term->vid = $vid;
     $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfea6';
     $term->parent = $term_recent->tid;
-    $term->uc_catalog_image = array('und' => array('0' => (array) $file));
+    $term->field_category_image = array('und' => array('0' => (array) $file));
     taxonomy_term_save($term);
-/*
-  $term = new stdClass();
-  $filepath = drupal_realpath('images/alexien.png');
-  $file = (object) array(
-      'uid' => 1,
-      'uri' => $filepath,
-      'filemime' => file_get_mimetype($filepath),
-      'status' => 1,
-    );
-  $file = file_copy($file, 'public://');
-  $term->name = 'Category B';
-  $term->vid = $vid;
-  $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfe7g';
-  $term->uc_catalog_image = array('und' => array('0' => (array) $file));
-  taxonomy_term_save($term);
 
-  $term = new stdClass();
-  $filepath = drupal_realpath('images/alexien.png');
-  $file = (object) array(
-      'uid' => 1,
-      'uri' => $filepath,
-      'filemime' => file_get_mimetype($filepath),
-      'status' => 1,
-    );
-  $file = file_copy($file, 'public://');
-  $term->name = 'Category B';
-  $term->vid = $vid;
-  $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfedf';
-  $term->uc_catalog_image = array('und' => array('0' => (array) $file));
-  taxonomy_term_save($term);
-
-  $term = new stdClass();
-  $filepath = drupal_realpath('images/alexien.png');
-  $file = (object) array(
-      'uid' => 1,
-      'uri' => $filepath,
-      'filemime' => file_get_mimetype($filepath),
-      'status' => 1,
-    );
-  $file = file_copy($file, 'public://');
-  $term->name = 'Category B';
-  $term->vid = $vid;
-  $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfezk';
-  $term->uc_catalog_image = array('und' => array('0' => (array) $file));
-  taxonomy_term_save($term);
-*/
 }
 
 /**
- * Deletes dummy taxonomy terms for the catalog vocabulary.
+ * Deletes dummy taxonomy terms for the categories vocabulary.
  */
-function basic_ubercart_dummy_content_delete_taxonomy_terms_catalog() {
+function basic_ubercart_dummy_content_delete_taxonomy_terms_categories() {
 
   // We just need to delete the two parent terms.
 
