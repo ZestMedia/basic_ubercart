@@ -25,6 +25,14 @@ function basic_ubercart_main_views_api($module = NULL, $api = NULL) {
  */
 function basic_ubercart_main_node_info() {
   $items = array(
+    'page' => array(
+      'name' => t('Basic Page'),
+      'base' => 'node_content',
+      'description' => t('A basic page.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'webform' => array(
       'name' => t('Webform'),
       'base' => 'node_content',
