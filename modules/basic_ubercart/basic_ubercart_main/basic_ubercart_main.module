@@ -24,14 +24,3 @@ function basic_ubercart_main_preprocess_page() {
   }
 
 }
-
-/**
- * Implememnts hook_views_default_views_alter().
- */
-function basic_ubercart_main_views_default_views_alter(&$views) {
-
-  if (isset($views['taxonomy_term'])) {
-    $views['taxonomy_term']->disabled = FALSE;
-  }
-
-}
