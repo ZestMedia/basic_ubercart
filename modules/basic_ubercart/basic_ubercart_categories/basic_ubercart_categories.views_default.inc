@@ -66,18 +66,28 @@ function basic_ubercart_categories_views_default_views() {
   $handler->display->display_options['arguments']['parent']['field'] = 'parent';
   $handler->display->display_options['arguments']['parent']['default_action'] = 'default';
   $handler->display->display_options['arguments']['parent']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['parent']['default_argument_options']['argument'] = '0';
+  $handler->display->display_options['arguments']['parent']['default_argument_options']['argument'] = 'all';
   $handler->display->display_options['arguments']['parent']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['parent']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['parent']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['parent']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['parent']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['parent']['validate_options']['vocabularies'] = array(
+    'categories' => 'categories',
+  );
   $handler->display->display_options['arguments']['parent']['validate']['fail'] = 'empty';
   /* Filter criterion: Taxonomy term: Vocabulary */
   $handler->display->display_options['filters']['vid']['id'] = 'vid';
   $handler->display->display_options['filters']['vid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['filters']['vid']['field'] = 'vid';
   $handler->display->display_options['filters']['vid']['value'] = array(
-    2 => '2',
+    1 => '1',
   );
+
+  /* Display: PC */
+  $handler = $view->new_display('block', 'PC', 'block_1');
+  $handler->display->display_options['display_description'] = 'PC';
+  $handler->display->display_options['block_description'] = 'PC';
   $export['product_categories'] = $view;
 
   $view = new view();
@@ -102,6 +112,13 @@ function basic_ubercart_categories_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
+  /* Header: Global: View area */
+  $handler->display->display_options['header']['view']['id'] = 'view';
+  $handler->display->display_options['header']['view']['table'] = 'views';
+  $handler->display->display_options['header']['view']['field'] = 'view';
+  $handler->display->display_options['header']['view']['empty'] = TRUE;
+  $handler->display->display_options['header']['view']['view_to_insert'] = 'product_categories:block_1';
+  $handler->display->display_options['header']['view']['inherit_arguments'] = TRUE;
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
