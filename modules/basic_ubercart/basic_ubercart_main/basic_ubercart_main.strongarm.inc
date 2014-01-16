@@ -150,33 +150,5 @@ function basic_ubercart_main_strongarm() {
   $strongarm->value = FALSE;
   $export['taxonomy_menu_voc_name_catalog'] = $strongarm;
 
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'uc_catalog_breadcrumb';
-  $strongarm->value = 1;
-  $export['uc_catalog_breadcrumb'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'uc_catalog_display';
-  $strongarm->value = 'catalog_grid';
-  $export['uc_catalog_display'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'uc_catalog_vid';
-  $strongarm->value = '1';
-  $export['uc_catalog_vid'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'uc_footer_message';
-  $strongarm->value = 'none';
-  $export['uc_footer_message'] = $strongarm;
-
   return $export;
 }

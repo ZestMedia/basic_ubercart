@@ -41,7 +41,7 @@ dependencies[] = googleanalytics
 dependencies[] = jquery_update
 dependencies[] = libraries
 dependencies[] = logintoboggan
-; dependencies[] = modernizr
+;dependencies[] = modernizr
 dependencies[] = module_filter
 dependencies[] = pathauto
 dependencies[] = print_mail
@@ -70,7 +70,7 @@ dependencies[] = uc_quote
 dependencies[] = uc_shipping
 
 ; Ubercart Extra
-dependencies[] = uc_catalog
+;dependencies[] = uc_catalog
 dependencies[] = uc_stock
 
 ; Ubercart Fulfillment

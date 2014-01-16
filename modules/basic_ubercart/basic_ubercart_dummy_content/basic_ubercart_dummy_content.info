@@ -4,4 +4,3 @@ core = 7.x
 package = Basic Ubercart
 version = 7.x-1.0
 project = basic_ubercart_dummy_content
-dependencies[] = uc_catalog
