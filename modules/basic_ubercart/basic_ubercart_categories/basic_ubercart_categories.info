@@ -1,0 +1,13 @@
+name = Basic Ubercart Categories
+description = Provides vocabulary, views and menu to support product categories.
+core = 7.x
+package = Basic Ubercart
+version = 7.x-1.0
+project = basic_ubercart_categories
+dependencies[] = features
+dependencies[] = menu
+dependencies[] = taxonomy
+features[features_api][] = api:2
+features[menu_custom][] = menu-products
+features[taxonomy][] = categories
+project path = profiles/basic_ubercart/modules/basic_ubercart

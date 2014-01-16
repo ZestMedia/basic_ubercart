@@ -83,6 +83,7 @@ dependencies[] = uc_weightquote
 dependencies[] = uc_out_of_stock
 
 ; Basic Ubercart
+dependencies[] = basic_ubercart_categories
 dependencies[] = basic_ubercart_faqs
 dependencies[] = basic_ubercart_main
 dependencies[] = basic_ubercart_product
