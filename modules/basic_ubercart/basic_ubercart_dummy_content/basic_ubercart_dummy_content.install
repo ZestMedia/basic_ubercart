@@ -15,16 +15,28 @@ function basic_ubercart_dummy_content_install() {
 }
 
 /**
+ * Implements hook_uninstall().
+ */
+function basic_ubercart_dummy_content_uninstall() {
+
+  // Delete taxonomy terms.
+  basic_ubercart_dummy_content_delete_taxonomy_terms_catalog();
+
+}
+
+/**
  * Creates some basic dummy taxonomy terms for the catalog vocabulary.
  */
 function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
+
+  $module_path = drupal_get_path('module', 'basic_ubercart_dummy_content');
 
   // Get catalog vid
   $vid = taxonomy_vocabulary_machine_name_load('catalog');
   $vid = $vid->vid;
 
   $term = new stdClass();
-  $filepath = drupal_realpath('images/alexien.png');
+  $filepath = $module_path . '/images/alexien.png';
   $file = (object) array(
       'uid' => 1,
       'uri' => $filepath,
@@ -40,7 +52,7 @@ function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
   $term_recent = clone $term;
 
     $term = new stdClass();
-    $filepath = drupal_realpath('images/download.jpg');
+    $filepath = $module_path . '/images/download.jpg';
     $file = (object) array(
         'uid' => 1,
         'uri' => $filepath,
@@ -56,7 +68,7 @@ function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
     taxonomy_term_save($term);
 
     $term = new stdClass();
-    $filepath = drupal_realpath('images/davealex.png');
+    $filepath = $module_path . '/images/davealex.png';
     $file = (object) array(
         'uid' => 1,
         'uri' => $filepath,
@@ -73,7 +85,7 @@ function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
     $term_recent = clone $term;
 
       $term = new stdClass();
-      $filepath = drupal_realpath('images/Picnic.png');
+      $filepath = $module_path . '/images/Picnic.png';
       $file = (object) array(
           'uid' => 1,
           'uri' => $filepath,
@@ -81,7 +93,7 @@ function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
           'status' => 1,
         );
       $file = file_copy($file, 'public://');
-      $term->name = 'Category A2';
+      $term->name = 'Category A2A';
       $term->vid = $vid;
       $term->uuid = 'beeccae6-7a0f-4d30-962d-5805ddddfez8';
       $term->parent = $term_recent->tid;
@@ -89,7 +101,7 @@ function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
       taxonomy_term_save($term);
 
   $term = new stdClass();
-  $filepath = drupal_realpath('images/images.jpg');
+  $filepath = $module_path . '/images/images.jpg';
   $file = (object) array(
       'uid' => 1,
       'uri' => $filepath,
@@ -105,7 +117,7 @@ function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
   $term_recent = clone $term;
 
     $term = new stdClass();
-    $filepath = drupal_realpath('images/download.jpg');
+    $filepath = $module_path . '/images/download.jpg';
     $file = (object) array(
         'uid' => 1,
         'uri' => $filepath,
@@ -165,4 +177,33 @@ function basic_ubercart_dummy_content_create_taxonomy_terms_catalog() {
   $term->uc_catalog_image = array('und' => array('0' => (array) $file));
   taxonomy_term_save($term);
 */
+}
+
+/**
+ * Deletes dummy taxonomy terms for the catalog vocabulary.
+ */
+function basic_ubercart_dummy_content_delete_taxonomy_terms_catalog() {
+
+  // We just need to delete the two parent terms.
+
+  $taxonomy_query = new EntityFieldQuery();
+  $taxonomy_query->entityCondition('entity_type', 'taxonomy_term')
+                 ->propertyCondition('uuid', 'beeccae6-7a0f-4d30-962d-5805ddddfe2c');
+  $taxonomy_terms = $taxonomy_query->execute();
+  if (!empty($taxonomy_terms)) {
+    $taxonomy_terms = reset(reset($taxonomy_terms));
+    $tid = $taxonomy_terms->tid;
+    taxonomy_term_delete($tid);
+  }
+
+
+  $taxonomy_query = new EntityFieldQuery();
+  $taxonomy_query->entityCondition('entity_type', 'taxonomy_term')
+                 ->propertyCondition('uuid', 'beeccae6-7a0f-4d30-962d-5805ddddfe3a');
+  $taxonomy_terms = $taxonomy_query->execute();
+  if (!empty($taxonomy_terms)) {
+    $taxonomy_terms = reset(reset($taxonomy_terms));
+    $tid = $taxonomy_terms->tid;
+    taxonomy_term_delete($tid);
+  }
 }
