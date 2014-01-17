@@ -38,6 +38,7 @@ dependencies[] = field_group
 dependencies[] = fivestar
 dependencies[] = galleryformatter
 dependencies[] = googleanalytics
+dependencies[] = imce
 dependencies[] = jquery_update
 dependencies[] = libraries
 dependencies[] = logintoboggan

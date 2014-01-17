@@ -5,3 +5,13 @@
  */
 
 include_once 'basic_ubercart_faqs.features.inc';
+
+/**
+ * Implements hook_views_pre_render().
+ *
+ * Add some CSS and Javascript for basic FAQs functionality.
+ */
+function basic_ubercart_faqs_views_pre_render(&$view) {
+  drupal_add_css(drupal_get_path('module', 'basic_ubercart_faqs') . '/css/basic_ubercart_faqs.css');
+  drupal_add_js(drupal_get_path('module', 'basic_ubercart_faqs') . '/js/basic_ubercart_faqs.js');
+}
