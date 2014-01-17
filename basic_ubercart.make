@@ -185,6 +185,9 @@ projects[uniform][download][branch] = 7.x-2.x
 projects[devel][version] = 1.3
 projects[devel][type] = "module"
 projects[devel][subdir] = "contrib"
+projects[diff][version] = 3.2
+projects[diff][type] = "module"
+projects[diff][subdir] = "contrib"
 
 ; Zest Modules
 ; --------

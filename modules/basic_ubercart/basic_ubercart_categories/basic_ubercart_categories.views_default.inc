@@ -29,10 +29,8 @@ function basic_ubercart_categories_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '12';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['style_options']['columns'] = '3';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -44,6 +42,17 @@ function basic_ubercart_categories_views_default_views() {
   $handler->display->display_options['fields']['tid']['label'] = '';
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
+  /* Field: Taxonomy term: Image */
+  $handler->display->display_options['fields']['field_category_image']['id'] = 'field_category_image';
+  $handler->display->display_options['fields']['field_category_image']['table'] = 'field_data_field_category_image';
+  $handler->display->display_options['fields']['field_category_image']['field'] = 'field_category_image';
+  $handler->display->display_options['fields']['field_category_image']['label'] = '';
+  $handler->display->display_options['fields']['field_category_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_category_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_category_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -66,15 +75,10 @@ function basic_ubercart_categories_views_default_views() {
   $handler->display->display_options['arguments']['parent']['field'] = 'parent';
   $handler->display->display_options['arguments']['parent']['default_action'] = 'default';
   $handler->display->display_options['arguments']['parent']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['parent']['default_argument_options']['argument'] = 'all';
+  $handler->display->display_options['arguments']['parent']['default_argument_options']['argument'] = '0';
   $handler->display->display_options['arguments']['parent']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['parent']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['parent']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['parent']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['parent']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['parent']['validate_options']['vocabularies'] = array(
-    'categories' => 'categories',
-  );
   $handler->display->display_options['arguments']['parent']['validate']['fail'] = 'empty';
   /* Filter criterion: Taxonomy term: Vocabulary */
   $handler->display->display_options['filters']['vid']['id'] = 'vid';
@@ -84,10 +88,40 @@ function basic_ubercart_categories_views_default_views() {
     1 => '1',
   );
 
-  /* Display: PC */
-  $handler = $view->new_display('block', 'PC', 'block_1');
-  $handler->display->display_options['display_description'] = 'PC';
-  $handler->display->display_options['block_description'] = 'PC';
+  /* Display: Product Categories */
+  $handler = $view->new_display('block', 'Product Categories', 'product_categories');
+  $handler->display->display_options['display_description'] = 'Product Categories';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Taxonomy term: Parent term */
+  $handler->display->display_options['arguments']['parent']['id'] = 'parent';
+  $handler->display->display_options['arguments']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['arguments']['parent']['field'] = 'parent';
+  $handler->display->display_options['arguments']['parent']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['parent']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['parent']['default_argument_options']['argument'] = 'all';
+  $handler->display->display_options['arguments']['parent']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['parent']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['parent']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['parent']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['parent']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['parent']['validate_options']['vocabularies'] = array(
+    'categories' => 'categories',
+  );
+  $handler->display->display_options['arguments']['parent']['validate_options']['type'] = 'name';
+  $handler->display->display_options['arguments']['parent']['validate']['fail'] = 'empty';
+  $handler->display->display_options['block_description'] = 'Product Categories';
+
+  /* Display: Product Categories Page */
+  $handler = $view->new_display('page', 'Product Categories Page', 'categories');
+  $handler->display->display_options['display_description'] = 'Product Categories Page';
+  $handler->display->display_options['path'] = 'categories';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Shop';
+  $handler->display->display_options['menu']['description'] = 'Explore our product range';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['product_categories'] = $view;
 
   $view = new view();
@@ -117,7 +151,7 @@ function basic_ubercart_categories_views_default_views() {
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['empty'] = TRUE;
-  $handler->display->display_options['header']['view']['view_to_insert'] = 'product_categories:block_1';
+  $handler->display->display_options['header']['view']['view_to_insert'] = 'product_categories:categories';
   $handler->display->display_options['header']['view']['inherit_arguments'] = TRUE;
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';

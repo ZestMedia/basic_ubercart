@@ -20,6 +20,7 @@ features[field_instance][] = node-product-field_category
 features[field_instance][] = taxonomy_term-categories-field_category_image
 features[menu_custom][] = menu-products
 features[taxonomy][] = categories
+features[variable][] = pathauto_taxonomy_term_categories_pattern
 features[variable][] = taxonomy_menu_display_descendants_categories
 features[variable][] = taxonomy_menu_display_num_categories
 features[variable][] = taxonomy_menu_end_all_categories

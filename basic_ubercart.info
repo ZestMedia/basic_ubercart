@@ -95,6 +95,7 @@ dependencies[] = basic_ubercart_theme
 dependencies[] = dblog
 dependencies[] = devel
 dependencies[] = devel_generate
+dependencies[] = diff
 
 ; Development Temporary
 dependencies[] = views_ui
