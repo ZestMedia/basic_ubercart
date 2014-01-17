@@ -13,6 +13,97 @@ function basic_ubercart_categories_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_categories_pattern';
+  $strongarm->value = '[term:vocabulary]/[term:parents:join-path]/[term:name]';
+  $export['pathauto_taxonomy_term_categories_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'path_breadcrumbs_cache_enabled';
+  $strongarm->value = 0;
+  $export['path_breadcrumbs_cache_enabled'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'path_breadcrumbs_cache_lifetime';
+  $strongarm->value = '0';
+  $export['path_breadcrumbs_cache_lifetime'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'path_breadcrumbs_decode_entities';
+  $strongarm->value = 1;
+  $export['path_breadcrumbs_decode_entities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'path_breadcrumbs_delimiter';
+  $strongarm->value = '>';
+  $export['path_breadcrumbs_delimiter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'path_breadcrumbs_hide_single_breadcrumb';
+  $strongarm->value = 1;
+  $export['path_breadcrumbs_hide_single_breadcrumb'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'path_breadcrumbs_home_link_enabled';
+  $strongarm->value = 1;
+  $export['path_breadcrumbs_home_link_enabled'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'path_breadcrumbs_home_link_title';
+  $strongarm->value = 'Home';
+  $export['path_breadcrumbs_home_link_title'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'path_breadcrumbs_internal_render';
+  $strongarm->value = 1;
+  $export['path_breadcrumbs_internal_render'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'path_breadcrumbs_internal_render_themes';
+  $strongarm->value = array();
+  $export['path_breadcrumbs_internal_render_themes'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'path_breadcrumbs_rich_snippets';
+  $strongarm->value = '1';
+  $export['path_breadcrumbs_rich_snippets'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'path_breadcrumbs_truncate_title_length';
+  $strongarm->value = '';
+  $export['path_breadcrumbs_truncate_title_length'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'path_breadcrumbs_url_cleaning_method';
+  $strongarm->value = 'pathauto';
+  $export['path_breadcrumbs_url_cleaning_method'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'taxonomy_menu_display_descendants_categories';
   $strongarm->value = 0;
   $export['taxonomy_menu_display_descendants_categories'] = $strongarm;
@@ -120,7 +211,7 @@ function basic_ubercart_categories_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'tvi_vocab_categories';
   $strongarm->value = array(
-    'is_default' => TRUE,
+    'is_default' => FALSE,
     'type' => 'vocab',
     'xid' => 'categories',
     'status' => 1,

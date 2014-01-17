@@ -43,6 +43,7 @@ dependencies[] = libraries
 dependencies[] = logintoboggan
 ;dependencies[] = modernizr
 dependencies[] = module_filter
+dependencies[] = path_breadcrumbs
 dependencies[] = pathauto
 dependencies[] = print_mail
 dependencies[] = rules_admin
