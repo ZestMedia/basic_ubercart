@@ -1,0 +1,11 @@
+name = basic_ubercart_related_products
+core = 7.x
+package = Features
+dependencies[] = entityreference
+dependencies[] = features
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[field_base][] = field_related_products
+features[field_instance][] = node-product-field_related_products
+features[views_view][] = related_products
