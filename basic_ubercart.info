@@ -21,6 +21,7 @@ dependencies[] = tracker
 
 ; Contrib - Don't need to list all modules here as some will be installed as dependencies.
 dependencies[] = admin_menu_toolbar
+dependencies[] = block_class
 dependencies[] = ckeditor
 dependencies[] = context_ui
 dependencies[] = colorbox

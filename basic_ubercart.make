@@ -210,6 +210,14 @@ projects[zest][download][type] = git
 projects[zest][download][url] = https://github.com/ZestMedia/zest-zen.git
 projects[zest][download][branch] = master
 
+; Theme Related Modules
+; --------
+projects[block_class][version] = 2.1
+projects[block_class][type] = "module"
+projects[block_class][subdir] = "contrib"
+projects[fontyourface][version] = 2.8
+projects[fontyourface][type] = "module"
+projects[fontyourface][subdir] = "contrib"
 
 ; Libraries
 ; ---------
