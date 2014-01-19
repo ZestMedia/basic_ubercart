@@ -25,6 +25,7 @@ features[field_instance][] = node-webform-body
 features[node][] = page
 features[node][] = webform
 features[user_permission][] = search content
+features[user_role][] = owner
 features[variable][] = comment_anonymous_page
 features[variable][] = comment_default_mode_page
 features[variable][] = comment_default_per_page_page
