@@ -5,25 +5,3 @@
  */
 
 include_once 'basic_ubercart_related_products.features.inc';
-
-/**
- * Implements hook_views_query_alter().
- */
-function basic_ubercart_related_products_views_query_alter(&$view, &$query) {
-  if ($view->name == 'related_products') {
-    dsm($query, 'before');
-    $query->where[0]['type'] = 'OR';
-    //$query->where[1]['type'] = 'OR';
-    unset($query->where[0]['conditions'][1]);
-    //unset($query->where[0]['conditions'][0]);
-    dsm($query, 'after');
-  }
-}
-
-/*
-function eb_mine_views_api() {
-  return array(
-    'api' => 3,
-  );
-}
-*/
