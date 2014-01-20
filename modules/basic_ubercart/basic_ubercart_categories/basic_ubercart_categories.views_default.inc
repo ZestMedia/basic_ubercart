@@ -146,6 +146,10 @@ function basic_ubercart_categories_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
+  /* Header: Global: Taxonomy Term Description */
+  $handler->display->display_options['header']['taxonom_description']['id'] = 'taxonom_description';
+  $handler->display->display_options['header']['taxonom_description']['table'] = 'views';
+  $handler->display->display_options['header']['taxonom_description']['field'] = 'taxonom_description';
   /* Header: Global: View area */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
