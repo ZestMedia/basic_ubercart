@@ -1,0 +1,14 @@
+.view-display-id-faqs .views-row {
+  margin-bottom: 10px;
+}
+
+.view-display-id-faqs .views-row .views-field-title {
+  border: 1px solid #333;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.view-display-id-faqs .views-row .views-field-body {
+  display: none;
+  padding: 1px; /* Fixed jumping problem on slidedown */
+}
