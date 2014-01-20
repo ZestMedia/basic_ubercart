@@ -25,8 +25,8 @@ function basic_ubercart_product_enquire_form_node_view($node, $view_mode, $langc
     $node->content['product_enquiry'] = array(
       '#markup'=> drupal_render($webform),
       '#view_mode' => $view_mode,
-      '#prefix' => '<div class="basic-ubercart-product-enquire-form"><h3>Product Enquiry Form</h3>',
-      '#suffix' => '</div>',
+      '#prefix' => '<div id="basic-ubercart-product-enquire"><div class="basic-ubercart-product-enquire-button">Enquire Now</div><div class="basic-ubercart-product-enquire-form"><h3>Product Enquiry Form</h3>',
+      '#suffix' => '</div></div>',
       '#weight' => 20,
       '#attributes' => array(
         'class' => array('product-enquiry'),
