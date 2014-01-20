@@ -145,11 +145,11 @@ function basic_ubercart_categories_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Header: Global: Taxonomy Term Description */
-  $handler->display->display_options['header']['taxonom_description']['id'] = 'taxonom_description';
-  $handler->display->display_options['header']['taxonom_description']['table'] = 'views';
-  $handler->display->display_options['header']['taxonom_description']['field'] = 'taxonom_description';
+  $handler->display->display_options['header']['taxonomy_description']['id'] = 'taxonomy_description';
+  $handler->display->display_options['header']['taxonomy_description']['table'] = 'views';
+  $handler->display->display_options['header']['taxonomy_description']['field'] = 'taxonomy_description';
   /* Header: Global: View area */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
@@ -157,6 +157,26 @@ function basic_ubercart_categories_views_default_views() {
   $handler->display->display_options['header']['view']['empty'] = TRUE;
   $handler->display->display_options['header']['view']['view_to_insert'] = 'product_categories:categories';
   $handler->display->display_options['header']['view']['inherit_arguments'] = TRUE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['uc_product_image']['id'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['table'] = 'field_data_uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['field'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['label'] = '';
+  $handler->display->display_options['fields']['uc_product_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uc_product_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['uc_product_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['uc_product_image']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['uc_product_image']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['uc_product_image']['separator'] = '';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';

@@ -17,12 +17,17 @@ function basic_ubercart_categories_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'categories' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 14,
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'print' => array(
         'label' => 'above',
