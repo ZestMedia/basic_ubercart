@@ -23,7 +23,7 @@ database="shelterstation"
 sitehumanname="Shelter Station"
 
 # Create a machine name from the human name
-sitemachinename=${sitehumanname/ /_}
+sitemachinename=${sitehumanname// /_}
 sitemachinename=${sitemachinename,,}
 
 drush site-install basic_ubercart --db-url=mysql://zest:5drxhawk@localhost/$database --account-name="admin" --account-pass="zestygeck0" --account-mail="test+$sitemachinename@zestmedia.co.nz" --site-name="$sitehumanname"

@@ -89,6 +89,7 @@ dependencies[] = uc_out_of_stock
 dependencies[] = basic_ubercart_categories
 dependencies[] = basic_ubercart_faqs
 dependencies[] = basic_ubercart_main
+dependencies[] = basic_ubercart_permissions
 dependencies[] = basic_ubercart_product
 dependencies[] = basic_ubercart_product_enquire_form
 dependencies[] = basic_ubercart_product_reviews
