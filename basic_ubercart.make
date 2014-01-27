@@ -226,3 +226,6 @@ projects[fontyourface][subdir] = "contrib"
 ; --------
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.2/ckeditor_4.2_standard.tar.gz"
+
+libraries[colorbox][download][type] = "get"
+libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.x.zip"
