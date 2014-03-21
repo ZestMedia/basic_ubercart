@@ -3,7 +3,7 @@ core = 7.x
 
 ; Core
 dependencies[] = block
-dependencies[] = comment
+;dependencies[] = comment
 dependencies[] = contextual
 dependencies[] = field_ui
 dependencies[] = file
@@ -62,7 +62,7 @@ dependencies[] = webform_uuid
 dependencies[] = xmlsitemap
 
 ; Ubercart dependencies
-Core[] = uc_cart
+dependencies[] = uc_cart
 dependencies[] = uc_order
 dependencies[] = uc_product
 dependencies[] = uc_store
@@ -77,8 +77,8 @@ dependencies[] = uc_shipping
 dependencies[] = uc_stock
 
 ; Ubercart Fulfillment
-dependencies[] = uc_flatrate
-dependencies[] = uc_weightquote
+;dependencies[] = uc_flatrate
+;dependencies[] = uc_weightquote
 
 ; Ubercart Payment
 
@@ -87,12 +87,12 @@ dependencies[] = uc_out_of_stock
 
 ; Basic Ubercart
 dependencies[] = basic_ubercart_categories
-dependencies[] = basic_ubercart_faqs
+;dependencies[] = basic_ubercart_faqs
 dependencies[] = basic_ubercart_main
 dependencies[] = basic_ubercart_permissions
-dependencies[] = basic_ubercart_product
-dependencies[] = basic_ubercart_product_enquire_form
-dependencies[] = basic_ubercart_product_reviews
+;dependencies[] = basic_ubercart_product
+;dependencies[] = basic_ubercart_product_enquire_form
+;dependencies[] = basic_ubercart_product_reviews
 dependencies[] = basic_ubercart_theme
 
 ; Development Pure
